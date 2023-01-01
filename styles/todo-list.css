@@ -1,0 +1,20 @@
+/**start targeting from this 
+ * <main aria-label="main content" class="full-screen">
+ *   <div class="todo-content-page">
+ *     ...
+ *     <ul class="todo-list"></ul>
+ *   </div>
+ * </main>
+ */
+ul.todos-list {
+  border: 1px dashed red;
+  padding-left: 20px;
+}
+
+ul.todos-list > li.todo {
+  --extra-spaces: 10px;
+  border: 1px dashed rgb(0, 255, 170);
+  list-style-type: none;
+  margin-top: var(--extra-spaces);
+  margin-bottom: var(--extra-spaces);
+}

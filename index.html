@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" class="full-screen">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo app :)</title>
+
+  <link rel="stylesheet" href="./styles/page-structure.css">
+  <link rel="stylesheet" href="./styles/todo-list.css">
+</head>
+
+<script src="https://kit.fontawesome.com/62b90845ef.js" crossorigin="anonymous"></script>
+
+<body class="app-mount full-screen">
+  <main aria-label="main content">
+    <div class="todo-top-bar"></div>
+    <div class="todo-main-content">
+      <div class="todo-side-bar"></div>
+      <div class="todo-editor">
+        <!-- <div onclick="new TodoSection('something').create()">add section</div> -->
+        <ul class="todos-list">
+          
+        </ul>
+
+        <div> 
+          <input name="todo" type="text" style="background: transparent" autocomplete="off">
+          <button class="add-todo-button">Add Todo</button>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+
+<script src="./Utility/untls.js" defer></script>
+<script src="./main.js" defer></script>
+
+</html>

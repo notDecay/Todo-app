@@ -1,0 +1,89 @@
+:root {
+  --app-font: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Apple Color Emoji",Helvetica,Arial,sans-serif,"Segoe UI Emoji","Segoe UI Symbol";
+  --background: #1b1b1b;
+}
+
+* {
+  font-family: var(--app-font);
+  color: white;
+}
+
+body {
+  width: inherit;
+  height: inherit;
+  background-color: var(--background);
+  overflow: hidden;
+}
+
+.full-screen {
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes fade-out {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+noscript > div.no-script {
+  color: white;
+  word-spacing: 2px;
+}
+
+div.extra-spaces {
+  padding-top: 500px;
+}
+
+
+
+/* main {
+  
+} */
+
+main {
+  /* border: 1px dashed red; */
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+main > div.todo-top-bar {
+  /* border: 1px dashed red; */
+  width: inherit;
+  height: 45px;
+}
+
+main > div.todo-main-content {
+  /* border: 1px dashed red; */
+  width: inherit;
+  height: 100%;
+  display: flex;
+}
+
+main > div.todo-main-content > div.todo-side-bar {
+  /* border: 1px dashed red; */
+  width: 25%;
+  height: inherit;
+}
+
+main > div.todo-main-content > div.todo-editor {
+  /* border: 1px dashed red; */
+  width: inherit;
+  height: inherit;
+  padding-left: 15px;
+  background-color: #1E1E1E;
+}
+
+/* main > div.todo-main-content  */
+
+code {
+  font-family: 'Courier New', Courier, monospace;
+}
