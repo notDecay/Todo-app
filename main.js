@@ -17,8 +17,8 @@ async function main() {
   // render all of the todo
   existingTodos.forEach(todo => addTodo(todo, arrayOfTodoData, todoList, todoInput))
   // add a new todo when you click the add todo button
-  addTodoButton.onclick = (event) => {
-    event.preventDefault()
+  addTodoButton.onclick = (mouseEvent) => {
+    mouseEvent.preventDefault()
     addTodo(todoInput.value, arrayOfTodoData, todoList, todoInput)
   }
 }

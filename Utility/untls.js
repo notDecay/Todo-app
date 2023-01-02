@@ -1,15 +1,4 @@
-/**Convert a CSS object to string
- * @param {Object} style
- * @returns {string} CSS `string`
- */
-const cssObjectToString = (style) => Object.entries(style)
-  .map(([key, value]) => {
-    key = key.replace(/[A-Z]/g, match => `-${match.toLowerCase()}`);
-    return `${key}:${value}`
-  }
-).join(';')
-
-/**Make an GUIDs (globally-unique identifiers)   
+/**Make an UUIDs (Universally Unique IDentifier)  
  * Universally Unique Identifiers are 128 bit numbers, composed of 16 octets and represented 
  * as 32 base-16 characters, that can be used to identify information across a computer system
  * @returns {string} an UUID `string`
@@ -23,10 +12,30 @@ const makeUUIDv4 = () => {
   });
 }
 
-/**Sleep within the specific time
- * @param {number} miliseconds 
- * @param {() => *} callback
- * @return {Promise<any>} a {@link Promise}
+/**Sleep within the specific time.  
+ * Example (with no callback function) 
+ * ```js
+ * async function someFunction() {
+ *   console.log('something')
+ *   await sleep(1000)
+ *   console.log('this should be logged after 1000 mili-seconds (or 1 second)')
+ * }
+ * 
+ * someFunction()
+ * ```
+ * 
+ * Example (with callback function) 
+ * ```js
+ * async function someFunction() {
+ *   await sleep(1000, () => console.log('this should be logged after 1000 mili-seconds (or 1 second)'))
+ * }
+ * 
+ * someFunction()
+ * ```
+ * @param {number} miliseconds the amount of time to sleep in mili-seconds, this could not
+ * be a negative number
+ * @param {() => any} callback a callback function, this is optional
+ * @return {Promise<any>} a {@link Promise} with *any* type
  */
 const sleep = (miliseconds, callback = () => {}) => new Promise(resolve => setTimeout(() => {
   logInfo('sleep()', '#1cffd5', `sleeping for ${miliseconds} ms...`)
