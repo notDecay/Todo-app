@@ -1,4 +1,5 @@
 const APP_VERSION = '1.0.0 dev'
+
 /**This is the main entry point of the app
  * @returns {Promise<void>}
  * @event   `window.onload`
