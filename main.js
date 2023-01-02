@@ -1,9 +1,6 @@
 const APP_VERSION = '1.0.0 dev'
 
-/**This is the main entry point of the app
- * @returns {Promise<void>}
- * @event   `window.onload`
- */
+
 async function main() {
   log('app version '+APP_VERSION)
   // get all of the todo elements
@@ -23,12 +20,7 @@ async function main() {
   }
 }
 
-/**Add a new todo 
- * @param {string} todoData             the todo data
- * @param {string[]} arrayOfTodoData    array of todo data that it's loaded from {@link localStorage}
- * @param {Element} todoList            the todo element that used to append the todo
- * @param {HTMLInputElement} todoInput  used to get the data from the input area, then append it to the `todoList`
- */
+
 function addTodo(todoData, arrayOfTodoData, todoList, todoInput) {
   log('Todo mounted')
   arrayOfTodoData.push(todoData)
@@ -44,32 +36,20 @@ function addTodo(todoData, arrayOfTodoData, todoList, todoInput) {
   todoInput.value = '' // reset the input value
 }
 
-/**Clear all of the todo data from {@link localStorage}, this function
- * is only for development
- * @returns {void} nothing
- */
+
 function clearCacheData() {
   localStorage.removeItem('todos')
   window.location.reload()
 }
 
-/**Get the todo data from {@link localStorage} or empty array
- * if there's no data
- * @returns {Promise<string[]>} a array of todo data
- */
+
 async function getTodoData() {
   return new Promise((resolve) => {
     resolve(JSON.parse(localStorage.getItem('todos') || '[]'))
   })
 }
 
-/**Get all of the *todo HTML elements*
- * @returns {{
- *   addTodoButton: HTMLButtonElement,
- *   todoInput: HTMLInputElement,
- *   todoList: Element
- * } | undefined} a object of todo elements or `undefined` if it could not find one of the elements
- */
+
 function getTodoElements() {
   /**@type {HTMLButtonElement | null} */
   const addTodoButton  = document.querySelector('button.add-todo-button')
@@ -83,9 +63,7 @@ function getTodoElements() {
   return { addTodoButton, todoInput, todoList }
 }
 
-/**Just a log function
- * @param {*} message anything
- */
+
 function log(message) {
   logInfo('Todo', '#ff8484ff', message)
 }
