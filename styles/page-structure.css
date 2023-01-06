@@ -70,7 +70,7 @@ main > div.todo-main-content {
 
 main > div.todo-main-content > div.todo-side-bar {
   /* border: 1px dashed red; */
-  width: 25%;
+  width: 29%;
   height: inherit;
 }
 
@@ -79,6 +79,7 @@ main > div.todo-main-content > div.todo-editor {
   width: inherit;
   height: inherit;
   padding-left: 15px;
+  padding-right: 15px;
   background-color: #1E1E1E;
 }
 
@@ -87,3 +88,6 @@ main > div.todo-main-content > div.todo-editor {
 code {
   font-family: 'Courier New', Courier, monospace;
 }
+
+/* .show { display: block; } */
+.hide { display: none; }
