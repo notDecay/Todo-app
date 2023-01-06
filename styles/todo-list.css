@@ -11,7 +11,14 @@ ul.todos-list {
   padding-left: 20px;
 }
 
-ul.todos-list > li.todo {
+section.top-section-warpper {
+}
+
+section.top-section-warpper > ul.todos-list {
+  padding-left: 17px;
+}
+
+section.top-section-warpper > ul.todos-list > li.todo {
   --extra-spaces: 10px;
   border: 1px dashed rgb(0, 255, 170);
   list-style-type: none;
