@@ -1,0 +1,221 @@
+/**start targeting from here
+ * <main aria-label="main content" class="full-screen">
+ *   <div class="todo-content-page">
+ *     ...
+ *     <ul class="todo-list"></ul>
+ *   </div>
+ * </main>
+ */
+:root {
+  --todo-hint-color: #dbdbdb;
+}
+
+/* section.top-section-warpper {
+  animation: none;
+} */
+
+section.top-section-warpper > ul.todos-list {
+  padding-left: 17px;
+}
+
+section.top-section-warpper > ul.todos-list > li.todo {
+  --extra-spaces: 10px;
+  list-style-type: none;
+  margin-top: var(--extra-spaces);
+  margin-bottom: var(--extra-spaces);
+}
+
+/**
+ * <div class="add-new-todo-hint">
+ *   <i class="icon-add-todo fa-solid fa-plus"></i>
+ *   <div>Add todo</div>
+ * </div>
+ */
+section.top-section-warpper > div.todo-editor-warpper > div.add-new-todo-hint {
+  /**adding the extra spaces to the bottom of the div 
+   * this make this div and other div(s) not close to each other
+   */
+  margin-bottom: 15px;
+  user-select: none;
+  cursor: pointer;
+}
+
+section.top-section-warpper > div.todo-editor-warpper > div.add-new-todo-hint > 
+i.icon-add-todo {
+  /* make the text inside the i tag on the same line as the icon */
+  display: flex;
+}
+
+section.top-section-warpper > div.todo-editor-warpper > div.add-new-todo-hint > 
+i.icon-add-todo::before {
+  /* Applying animation when hover a text or the icon */
+  transition: rotate 0.2s ease-out;
+}
+
+section.top-section-warpper > div.todo-editor-warpper > div.add-new-todo-hint > 
+i.icon-add-todo:hover::before {
+  /* Rotate the icon */
+  rotate: 90deg;
+}
+
+/* This is the hint text */
+section.top-section-warpper > div.todo-editor-warpper > div.add-new-todo-hint > 
+i.icon-add-todo > div {
+  margin-left: 10px;
+  --extra-spaces: 10px;
+  padding-left: var(--extra-spaces);
+  padding-right: var(--extra-spaces);
+  color: #f7f7f7;
+}
+
+/**Please someone find a better solution :) 
+ * ...
+ * <div class="todo-editor-warpper"> 
+ *   <div class="add-section-hint">
+ *     <div>Add todos</div>
+ *   </div>
+ * </div>
+ */
+section.top-section-warpper > div.todo-editor-warpper > div.add-section-hint {
+  /* this add todo hint bound */
+  width: auto;
+  height: 25px;
+  /* make the text and the "lines" on the center */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  --extra-spaces: 10px;
+  margin-left: var(--extra-spaces);
+  margin-right: var(--extra-spaces);
+  /* apply animation on hover */
+  opacity: 0;
+  transition: opacity 0.15s ease-out;
+  user-select: none;
+}
+
+section.top-section-warpper > div.todo-editor-warpper > div.add-section-hint:hover {
+  opacity: 1;
+}
+
+/* This is the hint text */
+section.top-section-warpper > div.todo-editor-warpper > div.add-section-hint > div {
+  position: absolute;
+}
+
+/* Adding a "line" to 2 side of a div */
+section.top-section-warpper > div.todo-editor-warpper > div.add-section-hint::before,
+section.top-section-warpper > div.todo-editor-warpper > div.add-section-hint::after {
+  content: '';
+  display: block;
+  width: 80%;
+  height: 1px;
+  background-color: var(--todo-hint-color);
+}
+
+section.top-section-warpper > div.todo-editor-warpper > div.add-section-hint::before {
+  margin-right: 95px;
+}
+
+section.top-section-warpper > div.todo-editor-warpper > div.add-section-hint::after {
+  margin-left: 5px;
+}
+
+/**Add new todo editor menu
+ * <div class="add-new-todo-hint">
+ *   ...
+ *   <div class="add-new-todo-menu">
+ *     <!--  -->
+ *   </div>
+ * </div>
+ */
+section.top-section-warpper > div.todo-editor-warpper > div.add-new-todo-menu {
+  width: auto;
+  height: auto;
+  cursor: auto;
+}
+
+section.top-section-warpper > div.todo-editor-warpper > div.add-new-todo-menu > 
+div.add-new-todo-input-area {
+  margin-top: 15px;
+  margin-bottom: 9px;
+  padding: 10px;
+  border: 2px solid #a5a5a5;
+  border-radius: 9px;
+}
+
+/* input#input-task-name input#input-task-description */
+section.top-section-warpper > div.todo-editor-warpper > div.add-new-todo-menu > 
+div.add-new-todo-input-area > input {
+  /* remove the outline, the border and the background */
+  border: none;
+  outline: none;
+  background: transparent;
+  /* change the color of the input */
+  color: #ffffff;
+  font-family: var(--app-font);
+  font-size: 15.25px;
+  /* bounding */
+  width: 100%;
+  text-decoration: solid;
+}
+
+section.top-section-warpper > div.todo-editor-warpper > div.add-new-todo-menu > 
+div.add-new-todo-input-area > input#input-task-name {
+  margin-bottom: 1px;
+}
+
+section.top-section-warpper > div.todo-editor-warpper > div.add-new-todo-menu > 
+div.add-new-todo-input-area > input#input-task-description {
+  margin-top: 1px;
+}
+
+section.top-section-warpper > div.todo-editor-warpper > div.add-new-todo-menu > 
+div.add-new-todo-input-area > input#input-task-name::placeholder {
+  color: #e0e0e0;
+}
+
+section.top-section-warpper > div.todo-editor-warpper > div.add-new-todo-menu > 
+div.add-new-todo-input-area > input#input-task-description::placeholder {
+  color: #8b8b8b;
+}
+
+/*  */
+section.top-section-warpper > div.todo-editor-warpper > div.add-new-todo-menu > 
+div.add-todo-buttons {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+section.top-section-warpper > div.todo-editor-warpper > div.add-new-todo-menu > 
+div.add-todo-buttons > button.add-todo-button {
+  border-radius: 7px;
+  border: none;
+  font-size: 15.5px;
+  padding: 5px 12px;
+  margin-top: 3px;
+  transition: background-color 0.2s ease-out;
+}
+
+section.top-section-warpper > div.todo-editor-warpper > div.add-new-todo-menu > 
+div.add-todo-buttons > button.add-todo-button > i {
+  margin-right: 7px;
+}
+
+section.top-section-warpper > div.todo-editor-warpper > div.add-new-todo-menu > 
+div.add-todo-buttons > button#button-add-task {
+  background-color: #292929;
+  margin-left: 10px;
+}
+
+section.top-section-warpper > div.todo-editor-warpper > div.add-new-todo-menu > 
+div.add-todo-buttons > button#button-add-task:hover,
+section.top-section-warpper > div.todo-editor-warpper > div.add-new-todo-menu > 
+div.add-todo-buttons > button#button-cancel:hover {
+  background-color: #333333;
+}
+
+section.top-section-warpper > div.todo-editor-warpper > div.add-new-todo-menu > 
+div.add-todo-buttons > button#button-cancel {
+  background-color: transparent;
+}
