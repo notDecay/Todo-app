@@ -9,19 +9,6 @@ async function main() {
   console.log('App version '+APP_VERSION)
   
   await initPageFunctionality()
-  // get all of the todo elements
-  
-  
-  
-  // render all of the todo
-  // existingTodos.forEach(todo => addTodo(todo, arrayOfTodoData, todoList, todoInput))
-  // // add a new todo when you click the add todo button
-  // addTodoButton.onclick = (mouseEvent) => {
-  //   const todoData = todoInput.value
-  //   mouseEvent.preventDefault()
-  //   if (todoData === '') return
-  //   addTodo(todoData, arrayOfTodoData, todoList, todoInput)
-  // }
 }
 
 async function initPageFunctionality() {
