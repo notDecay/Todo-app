@@ -8,6 +8,7 @@
  * ```
  * @param {HTMLElement} thisElement    the element that it will be added between 2 elements
  * @param {HTMLElement} elementAbove   the element above 
+ * @public
  */
 function addElementBefore(elementAbove, thisElement) {
   const parentNode = elementAbove.parentNode
@@ -17,6 +18,9 @@ function addElementBefore(elementAbove, thisElement) {
   // elementAbove.insertAdjacentHTML('afterend', thisElement.innerHTML)
 }
 
+/**
+ * @public
+ */
 class FailedToFindElement extends Error {
   constructor(message = `
   Could not find the HTML element. Check if: 

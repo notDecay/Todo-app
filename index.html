@@ -7,18 +7,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Todo app :)</title>
 
+  <!-- font awsome icons -->
   <link rel="stylesheet" href="./styles/FontAwsome/fa-shims-v4.css">
   <link rel="stylesheet" href="./styles/FontAwsome/fa-font-faces.css">
   <link rel="stylesheet" href="./styles/FontAwsome/fa-main.css">
-  
+  <!-- Page structure -->
   <link rel="stylesheet" href="./styles/page-structure.css">
-  <link rel="stylesheet" href="./styles/todo.css">
-
+  <!-- Menu -->
+  <script src="./Task/Menus/addTodoMenu.js"></script>
+  <link rel="stylesheet" href="./Task/Menus/addTodoMenu.css"></link>
+  <script src="./Task/TodoData.js"></script>
+  <link rel="stylesheet" href="./Task/todo.css"></link>
+  <!-- Task Compoment -->
+  <script src="./Task/Compoment/TaskList.js"></script>
+  <link rel="stylesheet" href="./Task/Compoment/TaskList.css"></link>
+  <!-- Main -->
   <script src="./Utility/HTMLElement.js"></script>
   <script src="./Utility/untls.js" defer></script>
   <script src="./main.js" defer></script>
-
-  <script src="./Menus/addTodoMenu.js"></script>
 </head>
 
 <body class="app-mount full-screen">
@@ -28,7 +34,7 @@
       <div class="todo-side-bar"></div>
       <div class="todo-editor">
         <section class="top-section-warpper">
-          <ul class="todos-list"></ul>
+          <ul class="tasks-list"></ul>
           <div class="todo-editor-warpper"> 
             <div class="add-new-todo-hint" id="add-todo">
               <i class="icon-add-todo fa-solid fa-plus">

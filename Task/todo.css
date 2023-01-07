@@ -1,0 +1,106 @@
+/**start targeting from here
+ * <main aria-label="main content" class="full-screen">
+ *   <div class="todo-content-page">
+ *     ...
+ *     <ul class="todo-list"></ul>
+ *   </div>
+ * </main>
+ */
+:root {
+  --todo-hint-color: #dbdbdb;
+}
+
+/**
+ * <div class="add-new-todo-hint">
+ *   <i class="icon-add-todo fa-solid fa-plus"></i>
+ *   <div>Add todo</div>
+ * </div>
+ */
+section.top-section-warpper > div.todo-editor-warpper > div.add-new-todo-hint {
+  /**adding the extra spaces to the bottom of the div 
+   * this make this div and other div(s) not close to each other
+   */
+  margin-bottom: 15px;
+  user-select: none;
+  cursor: pointer;
+}
+
+section.top-section-warpper > div.todo-editor-warpper > div.add-new-todo-hint > 
+i.icon-add-todo {
+  /* make the text inside the i tag on the same line as the icon */
+  display: flex;
+}
+
+section.top-section-warpper > div.todo-editor-warpper > div.add-new-todo-hint > 
+i.icon-add-todo::before {
+  /* Applying animation when hover a text or the icon */
+  transition: rotate 0.2s ease-out;
+}
+
+section.top-section-warpper > div.todo-editor-warpper > div.add-new-todo-hint > 
+i.icon-add-todo:hover::before {
+  /* Rotate the icon */
+  rotate: 90deg;
+}
+
+/* This is the hint text */
+section.top-section-warpper > div.todo-editor-warpper > div.add-new-todo-hint > 
+i.icon-add-todo > div {
+  margin-left: 10px;
+  --extra-spaces: 10px;
+  padding-left: var(--extra-spaces);
+  padding-right: var(--extra-spaces);
+  color: #f7f7f7;
+}
+
+/**Please someone find a better solution :) 
+ * ...
+ * <div class="todo-editor-warpper"> 
+ *   <div class="add-section-hint">
+ *     <div>Add todos</div>
+ *   </div>
+ * </div>
+ */
+section.top-section-warpper > div.todo-editor-warpper > div.add-section-hint {
+  /* this add todo hint bound */
+  width: auto;
+  height: 25px;
+  /* make the text and the "lines" on the center */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  --extra-spaces: 10px;
+  margin-left: var(--extra-spaces);
+  margin-right: var(--extra-spaces);
+  /* apply animation on hover */
+  opacity: 0;
+  transition: opacity 0.15s ease-out;
+  user-select: none;
+}
+
+section.top-section-warpper > div.todo-editor-warpper > div.add-section-hint:hover {
+  opacity: 1;
+}
+
+/* This is the hint text */
+section.top-section-warpper > div.todo-editor-warpper > div.add-section-hint > div {
+  position: absolute;
+}
+
+/* Adding a "line" to 2 side of a div */
+section.top-section-warpper > div.todo-editor-warpper > div.add-section-hint::before,
+section.top-section-warpper > div.todo-editor-warpper > div.add-section-hint::after {
+  content: '';
+  display: block;
+  width: 80%;
+  height: 1px;
+  background-color: var(--todo-hint-color);
+}
+
+section.top-section-warpper > div.todo-editor-warpper > div.add-section-hint::before {
+  margin-right: 95px;
+}
+
+section.top-section-warpper > div.todo-editor-warpper > div.add-section-hint::after {
+  margin-left: 5px;
+}

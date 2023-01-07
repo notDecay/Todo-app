@@ -1,9 +1,11 @@
 /**Show the add new todo menu when you click the "add todo"
  * @param {HTMLDivElement | null} todoHintElement the div element of the add new todo
- * @param {(data: { taskName: string, taskDescription: string }) => any} onPressAddTodoButton 
+ * @param {(taskData: Omit<ITaskData, "isCompleted" | "uuid">) => any} onPressAddTodoButton 
  * a callback function that fired when you click the "add todo" button. This callback function 
- * contain 1 argument - it's the task name and task description data
+ * contain 1 argument - it's the task data
+ * 
  * @throws `TypeError` if it's not has a class name of `"add-new-todo-hint"`
+ * @compoment_type menu
  * @public
  */
 function showAddTodoMenu(todoHintElement, onPressAddTodoButton) {
@@ -37,21 +39,24 @@ function showAddTodoMenu(todoHintElement, onPressAddTodoButton) {
   const taskName = document.querySelector('input#input-task-name')
   /**@type {HTMLInputElement | null} */
   const taskDescription = document.querySelector('input#input-task-description')
+  /**@type {HTMLButtonElement | null} */
   const addTodoButton = document.querySelector('button#button-add-task')
+  /**@type {HTMLButtonElement | null} */
   const cancelTodoButton = document.querySelector('button#button-cancel')
 
-  // more checking stuff
-  if (!taskName) throw new FailedToFindElement()
-  if (!taskDescription) throw new FailedToFindElement()
-  addTodoButton?.addEventListener('click', () => {
+  if (
+    !taskName || !taskDescription || !addTodoButton || !cancelTodoButton 
+  ) throw new FailedToFindElement()
+
+  addTodoButton.onclick = () => {
     onPressAddTodoButton({ 
-      taskName: taskName.value, 
-      taskDescription: taskDescription.value 
+      name: taskName.value, 
+      description: taskDescription.value
     })
     // clear the input 
     taskName.value = ''
     taskDescription.value = ''
-  })
-  // remove the menu 
-  cancelTodoButton?.addEventListener('click', () => todoMenu.remove())
+  }
+
+  cancelTodoButton.onclick = () => todoMenu.remove()
 }
