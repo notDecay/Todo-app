@@ -44,7 +44,9 @@ async function main() {
  */
 function addTask(taskData) {
   console.log('task mounted')
+  // Create a new element
   new TaskList(taskData)
+  // save it to the localStorage
   TaskData.saveData(taskData)
 }
 
