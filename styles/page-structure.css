@@ -42,11 +42,6 @@ div.extra-spaces {
 }
 
 
-
-/* main {
-  
-} */
-
 main {
   /* border: 1px dashed red; */
   width: 100vw;
@@ -81,7 +76,54 @@ main > div.todo-main-content > div.todo-editor {
   padding-left: 15px;
   padding-right: 15px;
   background-color: #1E1E1E;
+  overflow-y: scroll;
 }
+
+main > div.todo-main-content > div.todo-side-bar {
+}
+
+main > div.todo-main-content[show-sidebar='true'] > div.todo-side-bar {
+  display: block;
+}
+
+main > div.todo-main-content[show-sidebar='false'] {
+  /*  */
+}
+
+main > div.todo-main-content[show-sidebar='false'] > div.todo-side-bar {
+  display: none;
+}
+
+main > div.todo-main-content[show-sidebar='false'] > div.todo-editor {
+  --extra-spaces: 20%;
+  padding-left: var(--extra-spaces);
+  padding-right: var(--extra-spaces);
+}
+
+/* width */
+main > div.todo-main-content > div.todo-editor::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+main > div.todo-main-content > div.todo-editor::-webkit-scrollbar-track {
+  background: #242424;
+}
+
+/* Handle */
+main > div.todo-main-content > div.todo-editor::-webkit-scrollbar-thumb {
+  background-color: #424242;
+  border-radius: 7px;
+  transition: background-color 0.2s ease-out;
+}
+
+/* Handle on hover */
+main > div.todo-main-content > div.todo-editor::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+/* main > div.todo-main-content > div.todo-editor > div.extra-spaces {
+} */
 
 /* main > div.todo-main-content  */
 

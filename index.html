@@ -14,8 +14,8 @@
   <!-- Page structure -->
   <link rel="stylesheet" href="./styles/page-structure.css">
   <!-- Menu -->
-  <script src="./Task/Menus/addTodoMenu.js"></script>
-  <link rel="stylesheet" href="./Task/Menus/addTodoMenu.css"></link>
+  <script src="./Task/Menus/AddTaskMenu.js"></script>
+  <link rel="stylesheet" href="./Task/Menus/addTaskMenu.css"></link>
   <script src="./Task/TodoData.js"></script>
   <link rel="stylesheet" href="./Task/todo.css"></link>
   <!-- Task Compoment -->
@@ -30,7 +30,7 @@
 <body class="app-mount full-screen">
   <main aria-label="main content">
     <div class="todo-top-bar"></div>
-    <div class="todo-main-content">
+    <div class="todo-main-content" show-sidebar="true">
       <div class="todo-side-bar"></div>
       <div class="todo-editor">
         <section class="top-section-warpper">
@@ -46,9 +46,21 @@
             </div>
           </div>
         </section>
+        <div class="extra-spaces"></div>
       </div>
     </div>
   </main>
 </body>
+<script defer>
+  let isShowing = true
+  let _this = document.querySelector('div.todo-main-content')
+  document.addEventListener('keypress', (keyboardEvent) => {
+    if (keyboardEvent.key !== 'm') return console.log('not pressing m');
+    isShowing = !isShowing
+    if (isShowing) {
+      _this.setAttribute('show-sidebar', 'true')
+    } else _this.setAttribute('show-sidebar', 'false')
+  })
+</script>
 
 </html>

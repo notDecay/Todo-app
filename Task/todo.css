@@ -47,9 +47,6 @@ i.icon-add-todo:hover::before {
 section.top-section-warpper > div.todo-editor-warpper > div.add-new-todo-hint > 
 i.icon-add-todo > div {
   margin-left: 10px;
-  --extra-spaces: 10px;
-  padding-left: var(--extra-spaces);
-  padding-right: var(--extra-spaces);
   color: #f7f7f7;
 }
 
@@ -69,9 +66,6 @@ section.top-section-warpper > div.todo-editor-warpper > div.add-section-hint {
   display: flex;
   justify-content: center;
   align-items: center;
-  --extra-spaces: 10px;
-  margin-left: var(--extra-spaces);
-  margin-right: var(--extra-spaces);
   /* apply animation on hover */
   opacity: 0;
   transition: opacity 0.15s ease-out;
@@ -84,7 +78,9 @@ section.top-section-warpper > div.todo-editor-warpper > div.add-section-hint:hov
 
 /* This is the hint text */
 section.top-section-warpper > div.todo-editor-warpper > div.add-section-hint > div {
-  position: absolute;
+  --extra-spaces: 10px;
+  margin-right: var(--extra-spaces);
+  margin-left: var(--extra-spaces);
 }
 
 /* Adding a "line" to 2 side of a div */
@@ -92,15 +88,15 @@ section.top-section-warpper > div.todo-editor-warpper > div.add-section-hint::be
 section.top-section-warpper > div.todo-editor-warpper > div.add-section-hint::after {
   content: '';
   display: block;
-  width: 80%;
+  width: 41%;
   height: 1px;
   background-color: var(--todo-hint-color);
 }
 
-section.top-section-warpper > div.todo-editor-warpper > div.add-section-hint::before {
+/* section.top-section-warpper > div.todo-editor-warpper > div.add-section-hint::before {
   margin-right: 95px;
 }
 
 section.top-section-warpper > div.todo-editor-warpper > div.add-section-hint::after {
   margin-left: 5px;
-}
+} */

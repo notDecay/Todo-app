@@ -63,6 +63,7 @@ div.add-todo-buttons {
   width: 100%;
   display: flex;
   justify-content: flex-end;
+  user-select: none;
 }
 
 div.todo-editor-warpper > div.add-new-todo-menu > 

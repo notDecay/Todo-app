@@ -27,8 +27,9 @@ async function main() {
   const addTodoButton = document.querySelector('div#add-todo')
   if (!addTodoButton) return
 
+  const menu = new AddTaskMenu(addTodoButton)
   addTodoButton.onclick = () => {
-    showAddTodoMenu(addTodoButton, taskData => {
+    menu.showMenu(taskData => {
       addTask({ ...taskData, isCompleted: false })
     })
   }
