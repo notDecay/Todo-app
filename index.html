@@ -16,8 +16,9 @@
   <!-- Menu -->
   <script src="./Task/Menus/AddTaskMenu.js"></script>
   <link rel="stylesheet" href="./Task/Menus/addTaskMenu.css"></link>
-  <script src="./Task/TodoData.js"></script>
   <link rel="stylesheet" href="./Task/todo.css"></link>
+  <script src="./Task/TodoData.js"></script>
+  <script src="./Task/KeyboardShortcuts.js"></script>
   <!-- Task Compoment -->
   <script src="./Task/Compoment/TaskList.js"></script>
   <link rel="stylesheet" href="./Task/Compoment/TaskList.css"></link>
@@ -31,11 +32,11 @@
   <main aria-label="main content">
     <div class="todo-top-bar"></div>
     <div class="todo-main-content" show-sidebar="true">
-      <div class="todo-side-bar"></div>
+      <div class="todo-side-bar" disable-shortcut="false"></div>
       <div class="todo-editor">
         <section class="top-section-warpper">
           <ul class="tasks-list"></ul>
-          <div class="todo-editor-warpper"> 
+          <div class="todo-editor-warpper" is-showing="true"> 
             <div class="add-new-todo-hint" id="add-todo">
               <i class="icon-add-todo fa-solid fa-plus">
                 <div>Add todo</div>
@@ -51,16 +52,5 @@
     </div>
   </main>
 </body>
-<script defer>
-  let isShowing = true
-  let _this = document.querySelector('div.todo-main-content')
-  document.addEventListener('keypress', (keyboardEvent) => {
-    if (keyboardEvent.key !== 'm') return console.log('not pressing m');
-    isShowing = !isShowing
-    if (isShowing) {
-      _this.setAttribute('show-sidebar', 'true')
-    } else _this.setAttribute('show-sidebar', 'false')
-  })
-</script>
 
 </html>
