@@ -15,8 +15,14 @@ class AddTaskMenu {
       </button>
     </div>
   `
-  /**
-   * @param {HTMLDivElement} createTaskHintElement 
+  /**Create the task menu
+   * @param   {HTMLDivElement}  createTaskHintElement 
+   * the element where the menu is going to be created, it should look like this.  
+   * ```html
+   *    <div class="add-new-todo-hint">...</div>
+   * ```
+   * @throws  {@link FailedToFindElement} if it does not exist
+   * @throws  {@link TypeError}           if this element class name is not `"add-new-todo-hint"`
    */
   constructor(createTaskHintElement) {
     if (!createTaskHintElement) throw new FailedToFindElement()
@@ -40,11 +46,23 @@ class AddTaskMenu {
    * @returns  {void}    nothing
    */
   showMenu(onPressAddTodoButton) {
-    if (this.#isShowing) return console.log('todo menu is already showing');
+    KeyboardShortcuts.disableShortcut = true
+    if (this.#isShowing) return console.log('todo editor is already showing')
+    this.#todoMenu.setAttribute('is-showing', 'true')
     addElementBefore(this.#createTaskHintElement, this.#todoMenu)
     this.#initMenuFunctionality(onPressAddTodoButton)
-    document.addEventListener('keydown', this.#removeMenuWhenPressESC)
+    document.addEventListener('keyup', this.#removeMenuWhenPressESC)
     this.#isShowing = true
+  }
+
+  /**Remove the menu completely and the event listeners
+   * @returns  {void}    nothing
+   */
+  removeMenu() {
+    KeyboardShortcuts.disableShortcut = false
+    this.#todoMenu.remove()
+    document.removeEventListener('keypress', this.#removeMenuWhenPressESC)
+    this.#isShowing = false
   }
 
   /**This function will initialize the menu functionality like actions when click the
@@ -113,11 +131,5 @@ class AddTaskMenu {
       !taskName || !taskDescription || !addTaskButton || !cancelTaskButton 
     ) throw new FailedToFindElement()
     return { taskName, taskDescription, addTaskButton, cancelTaskButton }
-  }
-
-  removeMenu() {
-    this.#todoMenu.remove()
-    document.removeEventListener('keypress', this.#removeMenuWhenPressESC)
-    this.#isShowing = false
   }
 }
