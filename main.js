@@ -9,8 +9,13 @@
  * @author  Duck
  */
 //
-
+let onTyping
 const existingTasks = TaskData.getData()
+
+/**This element is a part of {@link showAddTodoMenu()} function
+ * @type {HTMLDivElement | null}
+ */
+const addTodoButton = document.querySelector('div#add-todo')
 
 /**This is the main entry point of the app
  * @returns {Promise<void>}
@@ -21,10 +26,6 @@ async function main() {
   const APP_VERSION = '1.0.0 dev'
   console.log('App version '+APP_VERSION)
   
-  /**This element is a part of {@link showAddTodoMenu()} function
-   * @type {HTMLDivElement | null}
-   */
-  const addTodoButton = document.querySelector('div#add-todo')
   if (!addTodoButton) return
 
   const menu = new AddTaskMenu(addTodoButton)
@@ -35,6 +36,7 @@ async function main() {
   }
   // Showing the task when you refresh the page
   existingTasks.forEach(task => addTask(task))
+  new KeyboardShortcuts()
 }
 
 /**Adding a task
